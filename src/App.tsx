@@ -4,17 +4,23 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import Write from './pages/Write';
 import Map from './pages/Map';
+import PWABadge from './components/PWABadge';
 
 const App: React.FC = () => {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="write" element={<Write />} />
-          <Route path="map" element={<Map />} />
-        </Route>
-      </Routes>
+      <div className="relative">
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="write" element={<Write />} />
+            <Route path="map" element={<Map />} />
+          </Route>
+        </Routes>
+        
+        {/* PWA 업데이트 알림 배지 */}
+        <PWABadge />
+      </div>
     </Router>
   );
 };
