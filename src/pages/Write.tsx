@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { db } from '../db/diaryDB';
-import { FoodEntry } from '../types/entry';
+import type { FoodEntry } from '../types/entry';
 
 const Write: React.FC = () => {
   const navigate = useNavigate();

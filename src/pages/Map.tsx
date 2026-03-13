@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Map as KakaoMap, MapMarker, CustomOverlayMap } from 'react-kakao-maps-sdk';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../db/diaryDB';
-import { FoodEntry } from '../types/entry';
+import type { FoodEntry } from '../types/entry';
 
 const Map: React.FC = () => {
   const entries = useLiveQuery(() => db.entries.toArray());

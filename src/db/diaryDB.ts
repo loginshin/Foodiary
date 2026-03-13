@@ -1,5 +1,5 @@
-import Dexie, { Table } from 'dexie';
-import { FoodEntry } from '../types/entry';
+import Dexie, { type Table } from 'dexie';
+import type { FoodEntry } from '../types/entry';
 
 export class FoodDiaryDB extends Dexie {
   // 'entries' 테이블 정의
