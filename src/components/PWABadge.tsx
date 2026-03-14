@@ -4,7 +4,7 @@ import { useRegisterSW } from 'virtual:pwa-register/react'
 function PWABadge() {
   const {
     offlineReady: [offlineReady, setOfflineReady],
-    needUpdate: [needUpdate, setNeedUpdate],
+    needRefresh: [needRefresh, setNeedRefresh],
     updateServiceWorker,
   } = useRegisterSW({
     onRegistered(r) {
@@ -17,12 +17,12 @@ function PWABadge() {
 
   const close = () => {
     setOfflineReady(false)
-    setNeedUpdate(false)
+    setNeedRefresh(false)
   }
 
   return (
     <div className="fixed bottom-24 left-4 right-4 z-[9999] pointer-events-none flex justify-center">
-      {(offlineReady || needUpdate) && (
+      {(offlineReady || needRefresh) && (
         <div className="bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-2xl border border-orange-100 dark:border-gray-700 pointer-events-auto flex flex-col gap-3 max-w-sm w-full animate-in slide-in-from-bottom-4">
           <div className="flex flex-col">
             <span className="text-sm font-bold text-gray-900 dark:text-white">
@@ -33,7 +33,7 @@ function PWABadge() {
             </span>
           </div>
           <div className="flex gap-2">
-            {needUpdate && (
+            {needRefresh && (
               <button 
                 className="flex-1 py-2 bg-orange-500 text-white text-xs font-bold rounded-lg"
                 onClick={() => updateServiceWorker(true)}

@@ -9,6 +9,9 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'icons.svg', 'hero.png'],
+      devOptions: {
+        enabled: true
+      },
       manifest: {
         name: '맛집 일기 - Foodiary',
         short_name: 'Foodiary',
